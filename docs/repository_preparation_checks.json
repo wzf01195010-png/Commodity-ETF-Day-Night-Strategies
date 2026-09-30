@@ -1,0 +1,13 @@
+{
+  "prepared_at_utc": "2026-09-30T21:16:11.489691+00:00",
+  "copied_source_files": 31,
+  "python_files": 24,
+  "research_code_changed": false,
+  "analysis_rerun": false,
+  "market_data_published": false,
+  "copied_file_hash_verification": "PASS",
+  "python_syntax_verification": "PASS",
+  "repository_files_excluding_this_report": 40,
+  "total_bytes_excluding_this_report": 342314,
+  "cli_help_check": "PASS; --help only, no analysis executed"
+}

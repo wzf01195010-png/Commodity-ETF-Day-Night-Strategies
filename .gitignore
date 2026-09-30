@@ -1,0 +1,29 @@
+# Environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.nbc
+*.nbi
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+__MACOSX/
+*.egg-info/
+# Data and numerical outputs are kept outside this code repository
+02_FINAL_DATA/provided_prices/
+02_FINAL_DATA/processed/
+02_FINAL_DATA/audits/
+08_OLD_VS_NEW/legacy_validation_inputs/
+01_FINAL_CODE/data/
+01_FINAL_CODE/outputs/
+reference/data_source_scripts/data/
+reference/data_source_scripts/results/
+outputs/
+runtime_cache/
+execution_logs/
+*.parquet
+*.pkl
+*.zip
+.env
+.env.*

@@ -1,0 +1,15 @@
+{
+  "sample_start": "2007-01-09", "sample_end": "2025-12-31", "expected_days": 4776,
+  "tickers": ["DBA","DBB","DBC","DBE","DBO","DBP","GLD","SLV","USO"],
+  "rules": ["Cash","Long","Short","Momentum","Reversal"],
+  "cost_bps": [0,1,2], "sensitivity_cost_bps": [0,1,2,5,10],
+  "seed": 20260928, "pairwise_reps": 2000, "spa_reps": 5000, "bootstrap_blocks": [10,5,20],
+  "initial_wealth": 100.0, "target_equity_convention": "post_transaction_cost",
+  "primary_distribution_settlement": "ex_open_cash_scenario_not_historical_payment_date",
+  "primary_borrow_rate": 0.0, "primary_financing_rate": 0.0, "primary_cash_rate": 0.0,
+  "signal_source": "validated_frozen_cached_same_session_lag",
+  "primary_holm_family": "nine_N_minus_D_tests",
+  "session_mean_families": "separate_nine_ETF_families_N_and_D",
+  "pairwise_mean_alternative": "greater_as_in_original_code",
+  "pairwise_sharpe_alternative": "two_sided_as_in_original_code"
+}
