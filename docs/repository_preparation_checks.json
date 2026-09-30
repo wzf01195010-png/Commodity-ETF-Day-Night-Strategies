@@ -9,5 +9,7 @@
   "python_syntax_verification": "PASS",
   "repository_files_excluding_this_report": 40,
   "total_bytes_excluding_this_report": 342314,
-  "cli_help_check": "PASS; --help only, no analysis executed"
+  "cli_help_check": "PASS; --help only, no analysis executed",
+  "record_scope": "Initial code-only repository preparation before authorized data upload; counts describe that initial stage.",
+  "subsequent_data_upload_record": "data_upload_checks.json"
 }

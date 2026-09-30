@@ -1,0 +1,17 @@
+{
+  "verified_at_utc": "2026-09-30T21:23:05.362388+00:00",
+  "verification_scope": "local preparation before push",
+  "data_files_copied": 98,
+  "data_bytes_copied": 91332704,
+  "frozen_price_inputs": 9,
+  "baseline_reconciliation_inputs": 9,
+  "logical_return_panels": 81,
+  "unique_physical_return_panels": 72,
+  "copy_hash_verification": "PASS",
+  "catalog_paths_and_hashes": "PASS",
+  "original_data_metadata_and_contents_preserved": "PASS",
+  "unchanged_existing_source_files": 31,
+  "research_code_changed": false,
+  "analysis_rerun": false,
+  "new_data_download": false
+}

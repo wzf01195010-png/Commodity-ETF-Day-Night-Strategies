@@ -1,10 +1,12 @@
 # Commodity ETF Daytime and Overnight Strategies
 
-Code for **Daytime and Overnight Exposure in Commodity ETFs: A Comparison of Trading Strategies**.
+Code and frozen data for **Daytime and Overnight Exposure in Commodity ETFs: A Comparison of Trading Strategies**.
 
-This repository contains the current empirical-repair code, its tests, pinned dependencies, static table definitions, and the historical scripts needed to trace the baseline and data-source workflow. Research source files were copied without changes. Creating this repository did not rerun the research or change empirical results.
+This repository contains the current empirical-repair code, its tests, pinned dependencies, static table definitions, the final frozen data, and the historical scripts needed to trace the baseline and data-source workflow. Research source and data files were copied without changes. Repository preparation and data publication did not rerun the research or change empirical results.
 
-**This is a code repository. Frozen market-price data, generated numerical outputs, and the Overleaf manuscript are not included. Exact empirical reproduction requires the external frozen inputs listed in [docs/INPUTS_REQUIRED.csv](docs/INPUTS_REQUIRED.csv). A fresh Yahoo download is not a substitute for the study's frozen snapshot.**
+**The nine frozen market-price inputs and all nine baseline reconciliation inputs are included. No new Yahoo download is required. Their exact filenames and hashes are recorded in [docs/INPUTS_REQUIRED.csv](docs/INPUTS_REQUIRED.csv), and all copied data files are listed in [DATA_MANIFEST.csv](DATA_MANIFEST.csv). A fresh Yahoo download is not a substitute for the study's frozen snapshot.**
+
+The repository also includes the existing final daily-return panels, data audits, exchange schedule, and the reference panels needed to resolve the complete return-panel catalog. Full trade ledgers, generated paper tables/figures, statistical result tables, and the Overleaf manuscript are not included in this data upload.
 
 ## Which code to use
 
@@ -18,7 +20,10 @@ This repository contains the current empirical-repair code, its tests, pinned de
 | `07_VALIDATION_AND_TESTS/unit_tests/` | Final unit tests and full-output acceptance tests |
 | `reference/data_source_scripts/` | Historical download and expansion scripts; their old backtest is not the final ledger |
 | `docs/validation/` | Existing actual test record from the empirical-rebuild stage |
-| `SOURCE_MANIFEST.csv` | SHA-256 hashes and source roles for the copied files |
+| `SOURCE_MANIFEST.csv` | SHA-256 hashes and source roles for copied code/configuration/test/evidence files |
+| `02_FINAL_DATA/` | Frozen price inputs, processed daily returns, audits, and data documentation |
+| `08_OLD_VS_NEW/` | Original baseline inputs and explicitly labeled reference return panels |
+| `DATA_MANIFEST.csv` | SHA-256 hashes and roles for all 98 copied data/documentation files |
 
 No R scripts or notebooks were used in the final empirical workflow. Duplicate Overleaf copies of the original Python routines are represented once by `legacy_reference`.
 
@@ -31,7 +36,7 @@ No R scripts or notebooks were used in the final empirical workflow. Duplicate O
 - Signals and descriptive returns use the frozen adjusted-price analytical series. Strategy results use the share-cash ledger, signed distribution obligations, post-cost equity targets, and short-position rebalancing.
 - Root random seed: 20260928; paired stationary bootstrap: 2,000 replications; SPA/StepM: 5,000 replications. Expected block lengths: 10 baseline, 5 and 20 sensitivity. HAC bandwidth follows the retained formula and equals 9 in the principal full-sample tests.
 
-## Reproduce with the frozen external inputs
+## Reproduce with the included frozen inputs
 
 Use Python **3.13.5**, the tested version. From this repository's root:
 
@@ -39,21 +44,17 @@ Use Python **3.13.5**, the tested version. From this repository's root:
 python3.13 -m venv .venv
 .venv/bin/python -m pip install -r 01_FINAL_CODE/requirements.lock.txt
 .venv/bin/python 01_FINAL_CODE/run_reproduction.py \
-  --input '/absolute/path/Main results/02_FINAL_DATA/provided_prices' \
-  --legacy-reference '/absolute/path/Main results/08_OLD_VS_NEW/legacy_validation_inputs' \
   --output '/absolute/path/NEW_COMMODITY_RESULTS'
 ```
 
-Replace these example paths with the location of the existing research delivery. The output directory must be new or empty. The command performs the historical baseline, final analyses, tables/figures, and the full test suite. **These are instructions for a future reproduction, not a claim that this repository upload executed those stages.**
+Choose a new or empty output directory. The CLI locates the included frozen inputs, baseline comparison inputs, and tests using its existing relative defaults. The command performs the historical baseline, final analyses, tables/figures, and the full test suite. **These are instructions for a future reproduction, not a claim that this repository upload executed those stages.**
 
-Alternatively, place the frozen CSVs under `02_FINAL_DATA/provided_prices/` and the nine legacy reference CSVs under `08_OLD_VS_NEW/legacy_validation_inputs/`; the existing CLI defaults then apply. These local inputs are ignored by Git.
+The archived files are already under `02_FINAL_DATA/provided_prices/` and `08_OLD_VS_NEW/legacy_validation_inputs/`. To use a separate byte-identical data copy, override `--input` and `--legacy-reference`.
 
 For validation of an existing **native** output directory, without rerunning empirical estimation:
 
 ```sh
 .venv/bin/python 01_FINAL_CODE/run_reproduction.py \
-  --input '/absolute/path/frozen/provided_prices' \
-  --legacy-reference '/absolute/path/legacy_validation_inputs' \
   --output '/absolute/path/existing-native-results' \
   --validate-only
 ```

@@ -1,0 +1,26 @@
+strategy_id,overnight_rule,daytime_rule,rule_order,night_signal,day_signal
+N_Cash__D_Cash,Cash,Cash,NIGHT/DAY,Cash,Cash
+N_Cash__D_Long,Cash,Long,NIGHT/DAY,Cash,Long
+N_Cash__D_Short,Cash,Short,NIGHT/DAY,Cash,Short
+N_Cash__D_Momentum,Cash,Momentum,NIGHT/DAY,Cash,previous same-session frozen return
+N_Cash__D_Reversal,Cash,Reversal,NIGHT/DAY,Cash,previous same-session frozen return
+N_Long__D_Cash,Long,Cash,NIGHT/DAY,Long,Cash
+N_Long__D_Long,Long,Long,NIGHT/DAY,Long,Long
+N_Long__D_Short,Long,Short,NIGHT/DAY,Long,Short
+N_Long__D_Momentum,Long,Momentum,NIGHT/DAY,Long,previous same-session frozen return
+N_Long__D_Reversal,Long,Reversal,NIGHT/DAY,Long,previous same-session frozen return
+N_Short__D_Cash,Short,Cash,NIGHT/DAY,Short,Cash
+N_Short__D_Long,Short,Long,NIGHT/DAY,Short,Long
+N_Short__D_Short,Short,Short,NIGHT/DAY,Short,Short
+N_Short__D_Momentum,Short,Momentum,NIGHT/DAY,Short,previous same-session frozen return
+N_Short__D_Reversal,Short,Reversal,NIGHT/DAY,Short,previous same-session frozen return
+N_Momentum__D_Cash,Momentum,Cash,NIGHT/DAY,previous same-session frozen adjusted return,Cash
+N_Momentum__D_Long,Momentum,Long,NIGHT/DAY,previous same-session frozen adjusted return,Long
+N_Momentum__D_Short,Momentum,Short,NIGHT/DAY,previous same-session frozen adjusted return,Short
+N_Momentum__D_Momentum,Momentum,Momentum,NIGHT/DAY,previous same-session frozen adjusted return,previous same-session frozen return
+N_Momentum__D_Reversal,Momentum,Reversal,NIGHT/DAY,previous same-session frozen adjusted return,previous same-session frozen return
+N_Reversal__D_Cash,Reversal,Cash,NIGHT/DAY,previous same-session frozen adjusted return,Cash
+N_Reversal__D_Long,Reversal,Long,NIGHT/DAY,previous same-session frozen adjusted return,Long
+N_Reversal__D_Short,Reversal,Short,NIGHT/DAY,previous same-session frozen adjusted return,Short
+N_Reversal__D_Momentum,Reversal,Momentum,NIGHT/DAY,previous same-session frozen adjusted return,previous same-session frozen return
+N_Reversal__D_Reversal,Reversal,Reversal,NIGHT/DAY,previous same-session frozen adjusted return,previous same-session frozen return

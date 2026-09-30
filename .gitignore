@@ -10,11 +10,7 @@ __pycache__/
 .DS_Store
 __MACOSX/
 *.egg-info/
-# Data and numerical outputs are kept outside this code repository
-02_FINAL_DATA/provided_prices/
-02_FINAL_DATA/processed/
-02_FINAL_DATA/audits/
-08_OLD_VS_NEW/legacy_validation_inputs/
+# Runtime data downloads and newly generated outputs remain untracked
 01_FINAL_CODE/data/
 01_FINAL_CODE/outputs/
 reference/data_source_scripts/data/
@@ -27,3 +23,8 @@ execution_logs/
 *.zip
 .env
 .env.*
+
+# Frozen published panels are explicitly included
+!02_FINAL_DATA/processed/return_reconciliation.parquet
+!02_FINAL_DATA/processed/final_strategy_daily_returns/*.parquet
+!08_OLD_VS_NEW/reference_return_panels/*.parquet
